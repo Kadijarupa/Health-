@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+<head><title>Appointments</title></head>
+<body>
+  <h2>Appointments</h2>
+  <form method="post">
+    Patient:
+    <select name="patient_id">
+      {% for p in patients %}
+        <option value="{{ p[0] }}">{{ p[1] }}</option>
+      {% endfor %}
+    </select>
+    Doctor:
+    <select name="doctor_id">
+      {% for d in doctors %}
+        <option value="{{ d[0] }}">{{ d[1] }}</option>
+      {% endfor %}
+    </select>
+    Date: <input type="date" name="date">
+    <input type="submit" value="Book Appointment">
+  </form>
+  <ul>
+    {% for a in appointments %}
+      <li>{{ a[1] }} with {{ a[2] }} on {{ a[3] }}</li>
+    {% endfor %}
+  </ul>
+  <a href="/dashboard">Back</a>
+</body>
+</html>

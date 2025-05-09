@@ -1,0 +1,19 @@
+
+<!DOCTYPE html>
+<html>
+<head><title>Doctors</title></head>
+<body>
+  <h2>Doctors</h2>
+  <form method="post">
+    Name: <input type="text" name="name">
+    Specialty: <input type="text" name="specialty">
+    <input type="submit" value="Add Doctor">
+  </form>
+  <ul>
+    {% for d in doctors %}
+      <li>{{ d[1] }} - {{ d[2] }}</li>
+    {% endfor %}
+  </ul>
+  <a href="/dashboard">Back</a>
+</body>
+</html>
